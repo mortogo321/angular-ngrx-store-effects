@@ -1,27 +1,47 @@
-# NgrxDemo
+# Angular NgRx Store & Effects Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+A minimal Angular scaffold with NgRx (Store, Effects, Entity, Store DevTools) wired into the app module as a starting point for building out feature state, actions, reducers, and effects.
 
-## Development server
+## What's inside
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- `RootStoreModule` — an empty root module intended to host feature state modules as the app grows; currently declares no reducers or effects.
+- `State` — an empty root state interface, ready to be extended per feature.
+- Default Angular CLI app shell (`AppComponent`, routing module) with the standard generated landing page.
 
-## Code scaffolding
+Note: the NgRx packages are installed and the root store module is registered in `AppModule`, but no feature state, actions, reducers, or effects are implemented yet — this is a clean starting point rather than a working state-management demo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech stack
 
-## Build
+- Angular (TypeScript)
+- NgRx Store, Effects, Entity, Store DevTools
+- RxJS
+- Karma / Jasmine for unit tests
+- Protractor for end-to-end tests
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Quickstart
 
-## Running unit tests
+```bash
+yarn install
+yarn start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Navigate to `http://localhost:4200/`.
 
-## Running end-to-end tests
+Other scripts:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+yarn build   # production build to dist/
+yarn test    # unit tests via Karma
+yarn e2e     # end-to-end tests via Protractor
+yarn lint    # lint via ng lint
+```
 
-## Further help
+## Project structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+src/app/
+  app.module.ts              # registers RootStoreModule
+  root-store/
+    root-store.module.ts     # empty root store module (extend with feature modules)
+    root-state.ts            # empty root State interface
+```
